@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreoCraft Marine | Custom Hard Tops, Fabrication & Marine Surveying</title>
+    <meta name="description" content="Premium marine fabrication, CreoTop hard tops, yacht restoration, design retrofits, and surveying for Pacific Northwest vessels.">
+    <style>
+        :root {
+            --navy: #0B192C;
+            --deep-blue: #1E3E62;
+            --teal: #00ADB5;
+            --light-bg: #F8FAFC;
+            --card-bg: #FFFFFF;
+            --text-dark: #1E293B;
+            --text-muted: #64748B;
+            --border: #E2E8F0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header / Nav */
+        header {
+            background-color: var(--navy);
+            padding: 1.25rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: #FFFFFF;
+            font-weight: 700;
+            font-size: 1.4rem;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--teal);
+        }
+
+        .badge {
+            background-color: rgba(0, 173, 181, 0.15);
+            color: var(--teal);
+            border: 1px solid var(--teal);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--deep-blue) 100%);
+            color: #FFFFFF;
+            padding: 5rem 2rem 6rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #CBD5E1;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--teal);
+            color: #FFFFFF;
+            padding: 0.85rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* Banner */
+        .coming-soon-banner {
+            background-color: #FEF3C7;
+            border-bottom: 1px solid #FCD34D;
+            color: #92400E;
+            text-align: center;
+            padding: 0.75rem 1rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* Services Grid */
+        .services-section {
+            max-width: 1200px;
+            margin: -3rem auto 4rem;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card.highlight {
+            border: 2px solid var(--teal);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background-color: rgba(0, 173, 181, 0.1);
+            color: var(--teal);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .contact-card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-card h2 {
+            font-size: 1.75rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--teal);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--navy);
+            color: #94A3B8;
+            text-align: center;
+            padding: 2rem 1rem;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .services-section { margin-top: -2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00ADB5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 20a6 6 0 0 0 12 0 8 8 0 0 1 10 0"/>
+                    <path d="M12 4v12"/>
+                    <path d="M4 10l8-6 8 6"/>
+                </svg>
+                CreoCraft<span>Marine</span>
+            </a>
+            <span class="badge">Official Launch Soon</span>
+        </div>
+    </header>
+
+    <div class="coming-soon-banner">
+        ⚓ Full digital platform & project showcase currently in build — Accept project inquiries below.
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Precision Marine Engineering & Custom Fabrication</h1>
+            <p>From signature CreoTop hard tops and composite structural retrofits to vessel surveying and consultation in the Pacific Northwest.</p>
+            <a href="#contact" class="btn">Inquire About a Project</a>
+        </div>
+    </section>
+
+    <section class="services-section">
+        <div class="services-grid">
+            
+            <div class="service-card highlight">
+                <div class="card-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                </div>
+                <h3>CreoTop Hard Tops</h3>
+                <p>Engineered composite hard top solutions tailored to your vessel’s geometry for ultimate weather protection and streamlined aesthetics.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="card-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                </div>
+                <h3>Custom Fabrication</h3>
+                <p>High-precision structural metalwork, composite component molding, and custom deck fixtures built to marine standards.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="card-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                </div>
+                <h3>Design & Retrofit</h3>
+                <p>Modernizing legacy systems, helm redesigns, structural modifications, and seamless integration of advanced marine electronics.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="card-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+                <h3>Restoration</h3>
+                <p>Full-scope fiberglass repairs, gelcoat color-matching, fairing, structural hull updates, and classic vessel overhaul management.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="card-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                </div>
+                <h3>Yacht & Marina Surveying</h3>
+                <p>Comprehensive physical inspection, structural integrity assessments, compliance audits, and condition surveys.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="card-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                </div>
+                <h3>Consultation & Supplies</h3>
+                <p>Expert technical advisory services, material selection guidance, and sourcing specialized commercial marine hardware.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="contact-card">
+            <h2>Get in Touch</h2>
+            <p>Inquire about a custom build, schedule a survey, or discuss your upcoming retrofit project.</p>
+            
+            <form action="mailto:info@creocraft.ca" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="Name" required placeholder="Captain Jane Doe">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="Email" required placeholder="jane@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="vessel">Vessel Make / Model & Year (Optional)</label>
+                    <input type="text" id="vessel" name="Vessel" placeholder="e.g., 48' Canoe Cove / 1982">
+                </div>
+                <div class="form-group">
+                    <label for="message">Project Details / Inquiry</label>
+                    <textarea id="message" name="Message" rows="5" required placeholder="Tell us about your project or surveying needs..."></textarea>
+                </div>
+                <button type="submit" class="btn" style="width:100%; border:none; cursor:pointer;">Send Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 CreoCraft Marine. All rights reserved. | creocraft.ca</p>
+    </footer>
+
+</body>
+</html>
