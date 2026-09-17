@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CreoCraft | West Coast Capable</title>
+    <meta name="description" content="West Coast Capable. Precision marine engineering, custom hard tops, vessel retrofits, and surveying built on principles and proven by practice.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <!-- SVG Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%230C1929'/><circle cx='50' cy='50' r='40' stroke='%23B58A46' stroke-width='4' fill='none'/><polygon points='50,12 45,20 55,20' fill='%23B58A46'/><polygon points='50,88 45,80 55,80' fill='%23B58A46'/><path d='M 18 50 L 44 50 L 50 28 L 56 50 L 82 50' stroke='%23B58A46' stroke-width='4' stroke-linejoin='round' fill='none'/><line x1='28' y1='58' x2='72' y2='58' stroke='%23FFFFFF' stroke-width='3'/><line x1='35' y1='64' x2='65' y2='64' stroke='%23FFFFFF' stroke-width='2.5'/><line x1='42' y1='70' x2='58' y2='70' stroke='%23FFFFFF' stroke-width='2'/></svg>">
 
@@ -13,10 +18,7 @@
     <meta property="og:title" content="CreoCraft | West Coast Capable">
     <meta property="og:description" content="Signature CreoTop hard tops, structural composite fabrication, modern retrofits, and surveying for Pacific Northwest waters.">
     <meta name="theme-color" content="#0C1929">
-    <meta name="description" content="West Coast Capable. Precision marine engineering, custom hard tops, vessel retrofits, and surveying built on principles and proven by practice.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --navy: #0C1929;
@@ -97,6 +99,24 @@
             color: var(--gold);
             font-weight: 600;
             margin-top: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-links a.page-link {
+            color: #CBD5E1;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a.page-link:hover {
+            color: var(--gold);
         }
 
         .nav-btn {
@@ -259,6 +279,9 @@
             padding: 2.25rem;
             border: 1px solid var(--card-border);
             transition: all 0.25s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
 
         .service-card:hover {
@@ -280,6 +303,15 @@
         .service-card p {
             color: var(--text-muted);
             font-size: 0.95rem;
+        }
+
+        .card-link-hint {
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--gold);
+            letter-spacing: 0.05em;
         }
 
         /* Ethos Strip */
@@ -395,8 +427,7 @@
     <!-- Header Navigation -->
     <header>
         <div class="nav-container">
-            <a href="#" class="logo-lockup">
-                <!-- CreoCraft Brand Mark Vector -->
+            <a href="/" class="logo-lockup">
                 <svg width="42" height="42" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="50" cy="50" r="42" stroke="#FFFFFF" stroke-width="4.5" fill="none"/>
                     <polygon points="50,2 45,10 55,10" fill="#B58A46"/>
@@ -413,7 +444,10 @@
                     <span class="logo-text-sub">West Coast Capable</span>
                 </div>
             </a>
-            <a href="#contact" class="nav-btn">Inquire</a>
+            <div class="nav-links">
+                <a href="/creotop.html" class="page-link">CreoTop™</a>
+                <a href="#contact" class="nav-btn">Inquire</a>
+            </div>
         </div>
     </header>
 
@@ -470,10 +504,11 @@
         </div>
 
         <div class="services-grid">
-            <div class="service-card highlight">
+            <a href="/creotop.html" class="service-card highlight">
                 <h3>CreoTop Hard Tops</h3>
                 <p>Engineered composite hard top solutions tailored to vessel geometry for ultimate Pacific Northwest weather protection and streamlined lines.</p>
-            </div>
+                <span class="card-link-hint">Explore CreoTop &rarr;</span>
+            </a>
 
             <div class="service-card">
                 <h3>Custom Fabrication</h3>
@@ -515,6 +550,13 @@
             <p>Tell us about your vessel, hard top project, or surveying requirements.</p>
             
             <form action="https://formsubmit.co/info@creocraft.ca" method="POST">
+                <!-- Custom Thank-You Page Redirect -->
+                <input type="hidden" name="_next" value="https://creocraft.ca/thank-you.html">
+                <!-- Honeypot field to block bot spam -->
+                <input type="text" name="_honey" style="display:none">
+                <!-- Direct forwarding without captcha detour -->
+                <input type="hidden" name="_captcha" value="false">
+
                 <div class="form-group">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" name="Name" required placeholder="Captain Jane Doe">
